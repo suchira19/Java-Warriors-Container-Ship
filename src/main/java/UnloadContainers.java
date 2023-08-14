@@ -1,11 +1,6 @@
 package org.example;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
 
 public class UnloadContainers {
 
@@ -29,7 +24,7 @@ public class UnloadContainers {
         //Create container ship
 
         //Process containers
-        String path = ".\\src\\main\\java\\resources\\data.txt";
+        String path = System.getProperty("user.dir")+"\\src\\main\\resources\\data.txt";
 
         //Reveal message
     }
