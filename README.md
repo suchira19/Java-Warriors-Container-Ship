@@ -40,11 +40,12 @@ The ship has a giant cargo crane capable of moving crates between stacks. To ens
 The boss doesn't want to interrupt the crane operator during this delicate procedure, but they forgot to ask which crate will end up where, and they want to be ready to unload them as soon as possible so they can embark.
 They do, however, have a drawing of the starting stacks of crates and the rearrangement procedure (your puzzle input). For example:
 
-    [D]
-[N] [C]    
-[Z] [M] [P]
-
- 1   2   3 
+||||
+|--- | --- | ---|
+||`D`||
+|`N`|`C`||
+|`Z`|`M`|`P`|
+|1|2|3|
 
 move 1 from 2 to 1
 
@@ -57,37 +58,42 @@ move 1 from 1 to 2
 In this example, there are three stacks of crates. Stack 1 contains two crates: crate Z is on the bottom, and crate N is on top. Stack 2 contains three crates; from bottom to top, they are crates M, C, and D. Finally, stack 3 contains a single crate, P.
 Then, the rearrangement procedure is given. In each step of the procedure, a quantity of crates is moved from one stack to a different stack. In the first step of the above rearrangement procedure, one crate is moved from stack 2 to stack 1, resulting in this configuration:
 
-[D]        
-[N] [C]    
-[Z] [M] [P]
-
- 1   2   3 
+||||
+|--- | --- | ---|
+|`D`|||
+|`N`|`C`||
+|`Z`|`M`|`P`|
+|1|2|3|
 
 In the second step, three crates are moved from stack 1 to stack 3. Crates are moved one at a time, so the first crate to be moved (D) ends up below the second and third crates:
 
-        [Z]
-        [N]
-    [C] [D]
-    [M] [P]
- 1   2   3
+||||
+|--- | --- | ---|
+|||`Z`|
+|||`N`|
+||`C`|`D`|
+||`M`|`P`|
+|1|2|3|
 
 Then, both crates are moved from stack 2 to stack 1. Again, because crates are moved one at a time, crate C ends up below crate M:
 
-        [Z]
-        [N]
-[M]     [D]
-[C]     [P]
-
- 1   2   3
+||||
+|--- | --- | ---|
+|||`Z`|
+|||`N`|
+|`M`||`D`|
+|`C`||`P`|
+|1|2|3|
 
 Finally, one crate is moved from stack 1 to stack 2:
 
-        [Z]
-        [N]
-        [D]
-[C] [M] [P]
-
- 1   2   3
+||||
+|--- | --- | ---|
+|||`Z`|
+|||`N`|
+|||`D`|
+|`C`|`M`|`P`|
+|1|2|3|
 
 The boss just needs to know which crate will end up on top of each stack; in this example, the top crates are C in stack 1, M in stack 2, and Z in stack 3, so you should combine these together and give the workers the message CMZ.
 
@@ -96,58 +102,68 @@ As you remove each set of crates (1 from each pile), when the rearrangement proc
 
 Containers for Java exercise
 
-**Part0**
+**Ship 0 - Example**
 
-        [D]
-    [N] [C]
-    [Z] [M] [P]
-     1   2   3 
+||||
+|--- | --- | ---|
+||`D`||
+|`N`|`C`||
+|`Z`|`M`|`P`|
+|1|2|3|
 
-**Part1**
+**Ship 1**
 
-                    [T] [M]     [B]
-                [T] [R] [J]     [Z] [H]
-                [R] [L] [B] [D] [T] [L]
-            [S] [M] [S] [V] [W] [F] [Q]
-        [J] [C] [W] [D] [F] [R] [H] [N]
-    [W] [T] [H] [N] [H] [H] [N] [N] [B]
-    [L] [N] [F] [G] [Q] [R] [J] [D] [F]
-    [S] [Q] [J] [B] [B] [L] [M] [J] [T]
-     1   2   3   4   5   6   7   8   9 
+||||||||||
+|---|---|---|---|---|---|---|---|---|
+|||||`T`|`M`||`B`||
+||||`T`|`R`|`J`||`Z`|`H`|
+||||`R`|`L`|`B`|`D`|`T`|`L`|
+|||`S`|`M`|`S`|`V`|`W`|`F`|`Q`|
+||`J`|`C`|`W`|`D`|`F`|`R`|`H`|`N`|
+|`W`|`T`|`H`|`N`|`H`|`H`|`N`|`N`|`B`|
+|`L`|`N`|`F`|`G`|`Q`|`R`|`J`|`D`|`F`|
+|`S`|`Q`|`J`|`B`|`B`|`L`|`M`|`J`|`T`|
+|1|2|3|4|5|6|7|8|9|
 
-**Part2**
+**Ship 2**
 
-        [C]             [L]         [T]
-        [V] [R] [M]     [T]         [B]
-        [F] [G] [H] [Q] [Q]         [H]
-        [W] [L] [P] [V] [M] [V]     [F]
-        [P] [C] [W] [S] [Z] [B] [S] [P]
-    [G] [R] [M] [B] [F] [J] [S] [Z] [D]
-    [J] [L] [P] [F] [C] [H] [F] [J] [C]
-    [Z] [Q] [F] [L] [G] [W] [H] [F] [M]
-     1   2   3   4   5   6   7   8   9
+||||||||||
+|---|---|---|---|---|---|---|---|---|
+||`C`||||`L`|||`T`|
+||`V`|`R`|`M`||`T`|||`B`|
+||`F`|`G`|`H`|`Q`|`Q`|||`H`|
+||`W`|`L`|`P`|`VS`|`M`|`V`||`F`|
+||`P`|`C`|`W`|`S`|`Z`|`B`|`S`|`P`|
+|`G`|`R`|`M`|`B`|`F`|`J`|`S`|`Z`|`D`|
+|`J`|`L`|`P`|`F`|`C`|`H`|`F`|`J`|`C`|
+|`Z`|`Q`|`F`|`L`|`G`|`W`|`H`|`F`|`M`|
+|1|2|3|4|5|6|7|8|9|
 
-**Part3**
+**Ship 3**
 
-    [G]                 [D] [R]    
-    [W]         [V]     [C] [T] [M]
-    [L]         [P] [Z] [Q] [F] [V] 
-    [J]         [S] [D] [J] [M] [T] [V]
-    [B]     [M] [H] [L] [Z] [J] [B] [S]
-    [R] [C] [T] [C] [T] [R] [D] [R] [D]
-    [T] [W] [Z] [T] [P] [B] [B] [H] [P]
-    [D] [S] [R] [D] [G] [F] [S] [L] [Q]
-     1   2   3   4   5   6   7   8   9
+||||||||||
+|---|---|---|---|---|---|---|---|---|
+|`G`|||||`D`|`R`|||
+|`W`|||`V`||`C`|`T`|`M`||
+|`L`|||`P`|`Z`|`Q`|`F`|`V`||
+|`J`|||`S`|`D`|`J`|`M`|`T`|`V`|
+|`B`||`M`|`H`|`L`|`Z`|`J`|`B`|`S`|
+|`R`|`C`|`T`|`C`|`T`|`R`|`D`|`R`|`D`|
+|`T`|`W`|`Z`|`T`|`P`|`B`|`B`|`H`|`P`|
+|`D`|`S`|`R`|`D`|`G`|`F`|`S`|`L`|`Q`|
+|1|2|3|4|5|6|7|8|9|
 
-**Part 4**
+**Ship 4**
 
+||||||||||
+|---|---|---|---|---|---|---|---|---|
+|||||`A`|`L`||`J`||
+||||`B`|`Q`|`R`||`D`|`T`|
+||||`G`|`H`|`H`|`M`|`N`|`E`|
+|||`J`|`L`|`D`|`L`|`J`|`H`|`B`|
+||`Q`|`L`|`W`|`S`|`V`|`N`|`F`|`N`|
+|`W`|`O`|`H`|`M`|`L`|`B`|`R`|`T`|`Q`|
+|`L`|`T`|`C`|`W`|`D`|`J`|`W`|`Z`|`E`|
+|`S`|`J`|`S`|`T`|`O`|`M`|`D`|`!`|`H`|
+|1|2|3|4|5|6|7|8|9|
 
-                    [A] [L]     [J]
-                [B] [Q] [R]     [D] [T]
-                [G] [H] [H] [M] [N] [E]
-            [J] [L] [D] [L] [J] [H] [B]
-        [Q] [L] [W] [S] [V] [N] [F] [N]
-    [W] [O] [H] [M] [L] [B] [R] [T] [Q]
-    [L] [T] [C] [W] [D] [J] [W] [Z] [E]
-    [S] [J] [S] [T] [O] [M] [D] [!] [H]
-     1   2   3   4   5   6   7   8   9 
