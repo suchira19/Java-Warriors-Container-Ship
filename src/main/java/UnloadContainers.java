@@ -29,7 +29,7 @@ public class UnloadContainers {
         //Create container ship
 
         //Process containers
-        String path = ".\\src\\main\\java\\org\\example\\data.txt";
+        String path = ".\\src\\main\\java\\resources\\data.txt";
 
         //Reveal message
     }
