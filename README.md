@@ -100,9 +100,11 @@ The boss just needs to know which crate will end up on top of each stack; in thi
 Now using the input provided in the data file, along with the provided container ship layout, create a simple message after following the instructions in the file to move the crates.
 As you remove each set of crates (1 from each pile), when the rearrangement procedure completes, what crate ends up on top of each stack? it should spell a sentence for the boss.
 
-Containers for Java exercise
+Shipping containers for Java exercise
 
 **Ship 0 - Example**
+
+*(See data0.txt file)*
 
 ||||
 |--- | --- | ---|
@@ -111,7 +113,29 @@ Containers for Java exercise
 |`Z`|`M`|`P`|
 |1|2|3|
 
+**Actual Ship To Be Unloaded**
+
+*(See data.txt file)*
+
+||||||||||
+|---|---|---|---|---|---|---|---|---|
+|||||`A`|`L`||`J`||
+||||`B`|`Q`|`R`||`D`|`T`|
+||||`G`|`H`|`H`|`M`|`N`|`E`|
+|||`J`|`L`|`D`|`L`|`J`|`H`|`B`|
+||`Q`|`L`|`W`|`S`|`V`|`N`|`F`|`N`|
+|`W`|`O`|`H`|`M`|`L`|`B`|`R`|`T`|`Q`|
+|`L`|`T`|`C`|`W`|`D`|`J`|`W`|`Z`|`E`|
+|`S`|`J`|`S`|`T`|`O`|`M`|`D`|`!`|`H`|
+|1|2|3|4|5|6|7|8|9|
+
+# Extension Exercise
+
+**Further ships to be unloaded - if you have the time or the will !!!**
+
 **Ship 1**
+
+*(See data1.txt file)*
 
 ||||||||||
 |---|---|---|---|---|---|---|---|---|
@@ -127,6 +151,8 @@ Containers for Java exercise
 
 **Ship 2**
 
+*(See data2.txt file)*
+
 ||||||||||
 |---|---|---|---|---|---|---|---|---|
 ||`C`||||`L`|||`T`|
@@ -141,6 +167,8 @@ Containers for Java exercise
 
 **Ship 3**
 
+*(See data3.txt file)*
+
 ||||||||||
 |---|---|---|---|---|---|---|---|---|
 |`G`|||||`D`|`R`|||
@@ -153,17 +181,5 @@ Containers for Java exercise
 |`D`|`S`|`R`|`D`|`G`|`F`|`S`|`L`|`Q`|
 |1|2|3|4|5|6|7|8|9|
 
-**Ship 4**
 
-||||||||||
-|---|---|---|---|---|---|---|---|---|
-|||||`A`|`L`||`J`||
-||||`B`|`Q`|`R`||`D`|`T`|
-||||`G`|`H`|`H`|`M`|`N`|`E`|
-|||`J`|`L`|`D`|`L`|`J`|`H`|`B`|
-||`Q`|`L`|`W`|`S`|`V`|`N`|`F`|`N`|
-|`W`|`O`|`H`|`M`|`L`|`B`|`R`|`T`|`Q`|
-|`L`|`T`|`C`|`W`|`D`|`J`|`W`|`Z`|`E`|
-|`S`|`J`|`S`|`T`|`O`|`M`|`D`|`!`|`H`|
-|1|2|3|4|5|6|7|8|9|
 
