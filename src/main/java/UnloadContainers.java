@@ -10,8 +10,8 @@ public class UnloadContainers {
                 [G] [H] [H] [M] [N] [E]
             [J] [L] [D] [L] [J] [H] [B]
         [Q] [L] [W] [S] [V] [N] [F] [N]
-    [W] [O] [H] [M] [L] [B] [R] [T] [Q]
-    [L] [T] [C] [W] [D] [J] [W] [Z] [E]
+    [W] [N] [H] [M] [L] [B] [R] [T] [Q]
+    [L] [O] [C] [W] [D] [J] [W] [Z] [E]
     [S] [J] [S] [T] [O] [M] [D] [!] [H]
      1   2   3   4   5   6   7   8   9
 
