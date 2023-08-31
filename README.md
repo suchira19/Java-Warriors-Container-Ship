@@ -1,6 +1,6 @@
 # The-Great-Java-Code-Off
 
-•	Teams of 3-4 will have 75mins to solve the problem.
+•	Teams of 3-4 will have 2 hrs to solve the problem.
 
 •	Teams should fork the repo, and submit their solutions in their own repo by the deadline
 
@@ -12,7 +12,7 @@
 
 •	Presentations should include showing the working solutions and talking about the coding choices teams made, including why things have been done a certain way.
 
-•	Judges will get 3mins to ask questions if they feel is necessary.
+•	Judges will get 3 mins to ask questions if they feel is necessary.
 
 •	Teams will be assigned presentation slots in a random order.
 

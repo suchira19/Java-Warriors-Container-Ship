@@ -19,10 +19,11 @@ public class UnloadContainers {
 
     public static void main(String[] args) throws IOException {
 
+        String instructions = System.getProperty("user.dir")+"\\src\\main\\resources\\data.txt";
+
         //Create container ship
 
         //Process containers
-        String path = System.getProperty("user.dir")+"\\src\\main\\resources\\data.txt";
 
         //Reveal message
     }
