@@ -1,4 +1,9 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.Map;
+import java.util.Stack;
 
 public class UnloadContainers {
 
@@ -20,6 +25,38 @@ public class UnloadContainers {
     public static void main(String[] args) throws IOException {
 
         String instructions = System.getProperty("user.dir")+"\\src\\main\\resources\\data.txt";
+
+        System.out.println("Instructions-----" + instructions);
+
+        String fileName = instructions;
+        File file = new File(fileName);
+        FileReader fr = new FileReader(file);
+        BufferedReader br = new BufferedReader(fr);
+        String line;
+        Container container = new Container();
+        while((line = br.readLine()) != null){
+            //process the line
+            //System.out.println(line);
+            String[] splited = line.split("\\s+");
+            Integer[] parameters = new Integer[3];
+            parameters[0] = Integer.parseInt(splited[1]);
+            parameters[1] = Integer.parseInt(splited[3]);
+            parameters[2] = Integer.parseInt(splited[5]);
+
+            Map<Integer, Stack> ship = container.createContainer();
+
+            if(ship.containsKey(parameters[1]) && ship.containsKey(parameters[2])) {
+                Stack<String> srcElements = ship.get(parameters[1]);
+                Stack<String> destElements = ship.get(parameters[2]);
+                for(int i = 0; i< parameters[0]; i++) {
+                    if(!srcElements.empty()) {
+                        destElements.push(srcElements.pop());
+                    }
+                }
+            }
+
+            System.out.println("Container---" + ship);
+        }
 
         //Create container ship
 
