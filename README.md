@@ -1,3 +1,11 @@
+**Team comment**
+
+We meticulously designed and constructed container ship program. Furthermore, we successfully implemented a robust process for handling containers.
+
+Our solution stands out as the best because of our efficiency and innovation. Our solution was completed on time.
+
+
+
 # The-Great-Java-Code-Off
 
 •	Teams of 3-4 will have 2 hrs to solve the problem.
@@ -180,6 +188,3 @@ Shipping containers for Java exercise
 |`T`|`W`|`A`|`T`|`P`|`B`|`B`|`E`|`P`|
 |`D`|`S`|`R`|`D`|`D`|`F`|`S`|`L`|`Q`|
 |1|2|3|4|5|6|7|8|9|
-
-
-

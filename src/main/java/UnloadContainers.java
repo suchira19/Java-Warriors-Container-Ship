@@ -22,6 +22,40 @@ public class UnloadContainers {
 
      */
 
+    private void printShip (String[][] container) {
+        System.out.print("    |");
+        for (int i = 0; i < container[0].length; i++){
+            System.out.print("    ");
+            System.out.print((char)('1' + i));
+            System.out.print("    |");
+        }
+        System.out.println();
+        for (int i = 0; i < container.length; i++){
+            System.out.print("----+");
+            for (int j = 0; j < container[0].length; j++){
+                System.out.print("---------+");
+            }
+            System.out.println();
+            System.out.print("  " + (i + 1) + " |");
+            for (int j = 0; j < container[0].length; j++){
+                if (container[i][j].length() < 10){
+                    int spaces = (9 - container[i][j].length()) / 2;
+                    for (int k = 0; k < spaces; k++){
+                        System.out.print(" ");
+                    }
+                    System.out.print(container[i][j]);
+                    for (int k = 0; k < (9 - container[i][j].length()) - spaces; k++){
+                        System.out.print(" ");
+                    }
+                }
+                else{
+                    System.out.print(container[i][j].substring(0, 9));
+                }
+                System.out.print("|");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) throws IOException {
 
         String instructions = System.getProperty("user.dir")+"\\src\\main\\resources\\data.txt";
@@ -34,6 +68,7 @@ public class UnloadContainers {
         BufferedReader br = new BufferedReader(fr);
         String line;
         Container container = new Container();
+        Map<Integer, Stack> ship = container.createContainer();
         while((line = br.readLine()) != null){
             //process the line
             //System.out.println(line);
@@ -43,7 +78,7 @@ public class UnloadContainers {
             parameters[1] = Integer.parseInt(splited[3]);
             parameters[2] = Integer.parseInt(splited[5]);
 
-            Map<Integer, Stack> ship = container.createContainer();
+
 
             if(ship.containsKey(parameters[1]) && ship.containsKey(parameters[2])) {
                 Stack<String> srcElements = ship.get(parameters[1]);
@@ -54,10 +89,15 @@ public class UnloadContainers {
                     }
                 }
             }
-
-            System.out.println("Container---" + ship);
         }
-
+        System.out.println("Container---" + ship);
+        for (Map.Entry<Integer, Stack> set :
+            ship.entrySet()) {
+            Object[] arr = set.getValue().toArray();
+            // Printing all elements of a Map
+            System.out.println(set.getKey() + " = "
+                + set.getValue());
+        }
         //Create container ship
 
         //Process containers
