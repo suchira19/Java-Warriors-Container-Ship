@@ -94,10 +94,22 @@ public class UnloadContainers {
         for (Map.Entry<Integer, Stack> set :
             ship.entrySet()) {
             Object[] arr = set.getValue().toArray();
+            Integer[][] ship2DArray = new Integer[1][arr.length];
+
+            for (int i = ship2DArray.length - 1; i > 0; i--) {
+                for (int j = 0; j < ship2DArray[i].length; j++) {
+                    //print value containers[i][j] in changing null into " " and surround with brackets
+                    System.out.print("[" + (ship2DArray[i][j] == null ? " " : ship2DArray[i][j]) + "]");
+                }
+                System.out.println();
+            }
+
             // Printing all elements of a Map
             System.out.println(set.getKey() + " = "
                 + set.getValue());
         }
+
+
         //Create container ship
 
         //Process containers
